@@ -21,7 +21,8 @@ header ul {
 }
 
 header li {
-    margin-left: 25px;
+    margin-left: 
+    25px;
 }
 
 header li a {
@@ -42,3 +43,32 @@ header li a:hover {
 }
 
 /*-----SHOWCASE-----*/
+
+.showcase {
+    display: flex;
+    justify-items: center;
+    margin-top: 60px;
+    margin-left: 15%;
+}
+
+.showcase img {
+    width: 700px;
+    height: 700px;
+}
+
+.showcase h1 {
+    font-size: 60px;
+}
+
+.left-content {
+    text-align: center;
+    width: 700px;
+    margin-top: 80px;
+}
+
+.showcase button {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 24px;
+}
