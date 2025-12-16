@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import LogoPic from '../images/logo.png'
-import '/home/mrukuleo/Документы/GitHub/AfricanDrumsWebsite/src/App.css'
+import '../../App.css'
 
 function Showcase() {
   return (
@@ -8,8 +8,8 @@ function Showcase() {
       <section className="showcase">
         <img src={LogoPic}/>
         <div className="left-content">
-            <h1>ШКОЛА АФРИКАНСКИХ БАРАБАНОВ ДЛЯ ДЕТЕЙ 7-12 ЛЕТ</h1>
-            <button>ЗАПИСАТЬСЯ НА УРОК</button>
+            <h1>ШКОЛА АФРИКАНСКИХ БАРАБАНОВ ДЛЯ ДЕТЕЙ 7-14 ЛЕТ</h1>
+            <a href='#sign-up'><button>ЗАПИСАТЬСЯ НА УРОК</button></a>
         </div>
       </section>
     </>

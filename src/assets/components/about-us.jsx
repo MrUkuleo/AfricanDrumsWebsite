@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ZG from '../images/заглушка.jpg'
-import '/home/mrukuleo/Документы/GitHub/AfricanDrumsWebsite/src/App.css'
+import '../../App.css'
 
 function AboutUs() {
   return (

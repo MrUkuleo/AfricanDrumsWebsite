@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: blanchedalmond;
@@ -7,6 +11,21 @@ body {
 
 h1 {
     font-size: 60px;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 24px;
+    width: 350px;
+    height: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: blanchedalmond;
 }
 
 /*-----HEADER-----*/
@@ -70,26 +89,20 @@ header li a:hover {
     margin-top: 80px;
 }
 
-.showcase button {
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 15px;
-    font-size: 24px;
-    width: 350px;
-    height: 50px;
-}
-
-.showcase button:hover {
-    cursor: pointer;
-    background-color: black;
-    color: blanchedalmond;
-}
-
 /*-----ABOUT US*-----*/
-#about-us {
+.about-us {
     justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding-left: 500;
+    padding: 20px; /* Немного отступов по бокам */
+    height: 100vh; /* Занимает всю высоту экрана */
+}
+
+#about-us {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 .parapraph {
@@ -109,4 +122,58 @@ header li a:hover {
 .about-us img {
     border-radius: 50%;
     width: 250px;
+    height: 250px;
+}
+
+/*-----SIGN UP-----*/
+.sign-up {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Немного отступов по бокам */
+}
+
+#sign-up {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.sign-up form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sign-up input {
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.sign-up input:focus {
+    outline: none;
+    border-color: orangered;
+    box-shadow: 0 0 5px orangered;
+}
+
+.sign-up select {
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: transparent;
+}   
+
+.sign-up select:focus {
+    outline: none;
+    border-color: orangered;
+    box-shadow: 0 0 5px orangered;
 }
