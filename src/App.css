@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 24px;
+}
+
+html, body {
+    height: 100%;  /* Добавьте это */
+    overflow: hidden;  /* Скрываем скроллбар на body */
 }
 
 body {
@@ -8,19 +13,33 @@ body {
     background-color: blanchedalmond;
     margin: 0;
     padding: 0;
+    scroll-padding-top: 100px;
+    display: flex;  /* Добавьте: Flexbox для вертикального распределения */
+    flex-direction: column;  /* Вертикальный стек */
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 72px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+.app-container {
+    height: 100vh;  /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 button {
     background-color: transparent;
     border: 1px solid black;
     border-radius: 15px;
-    font-size: 24px;
-    width: 350px;
-    height: 50px;
+    font-size: 28px;
+    width: 400px;
+    height: 60px;
 }
 
 button:hover {
@@ -29,18 +48,33 @@ button:hover {
     color: blanchedalmond;
 }
 
+.showcase, .about-us, .schedule, .contacts {
+    height: auto;  /* Уберите 100vh, пусть flex растягивает */
+    flex: 1;  /* Занимает всё оставшееся место */
+    min-height: 100vh;  /* Минимально 100vh для маленьких экранов */
+    overflow: hidden;  /* Нет скролла внутри секции */
+}
+
+.paragraph-content, .schedule p, .contacts ul {
+    overflow-y: auto;  /* Скролл только внутри, если нужно */
+    max-height: 100%;  /* Не выходит за секцию */
+}
+
 /*-----HEADER-----*/
 
 header {
     position: sticky;
     top: 0;
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border: 1px solid black;
     background-color: blanchedalmond;
     box-shadow: 10px 7px 20px orangered;
+    z-index: 1000;
+    flex-shrink: 0; 
 }
 
 header ul {
@@ -49,19 +83,24 @@ header ul {
 }
 
 header li {
-    margin-left: 
-    25px;
+    margin-left: 25px;
 }
 
 header li a {
     color: black;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 }
 
 header li a:hover {
     color: orangered;
     text-decoration:underline;
+}
+
+header li a.active {
+    color: green;
+    text-decoration: dashed underline;
 }
 
 #logo {
@@ -74,19 +113,24 @@ header li a:hover {
 .showcase {
     display: flex;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
 }
 
 .showcase img {
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
+    max-width: 48%;
+    max-height: 85%;
+    object-fit: contain;
 }
 
 .left-content {
     text-align: center;
-    width: 700px;
-    margin-top: 80px;
+    width: 800px;
+    max-width: 48%;
 }
 
 /*-----ABOUT US*-----*/
@@ -95,19 +139,21 @@ header li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 500;
-    padding: 20px; /* Немного отступов по бокам */
-    height: 100vh; /* Занимает всю высоту экрана */
+    padding: 20px;
+    height: 100vh;
 }
 
 #about-us {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 64px;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .parapraph {
     display: flex;
-    max-width: 800px;
+    max-width: 1000px;
+    align-items: center;
+    gap: 30px;
 }
 
 #pr {
@@ -115,37 +161,52 @@ header li a:hover {
 }
 
 .paragraph-content {
-    margin: 25px;
+    margin: 0;
+}
+
+.paragraph-content ul {
+    margin: 10px 0;
+}
+
+.paragraph-content li {
+    margin: 8px 0;
 }
 
 .about-us img {
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
 }
 
 /*-----SCHEDULE-----*/
 .schedule {
-    margin-top: 200px;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px; /* Немного отступов по бокам */
+    padding: 20px;
+    height: 100vh;
+}
+
+.schedule h1 {
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .schedule p {
-    margin-bottom: 1px;
+    margin: 8px 0;
+    max-width: 1100px;
+    text-align: center;
 }
 
 /*-----SIGN UP-----*/
 .sign-up {
-    margin-top: 200px;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px; /* Немного отступов по бокам */
+    padding: 20px;
+    height: 100vh;
 }
 
 #sign-up {
@@ -192,12 +253,54 @@ header li a:hover {
     box-shadow: 0 0 5px orangered;
 }
 
-/*-----COMTACTS-----*/
+/*-----CONTACTS-----*/
 .contacts {
-    margin-top: 200px;
     justify-content: center;
     display: flex;
-    font-size: 20px;
+    font-size: 24px;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.contacts h1 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.contacts ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.contacts li {
+    margin: 8px 0;
+}
+
+.contacts a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+.adresToCopy, .phoneToCopy {
+    cursor: pointer;
+    text-decoration: dashed underline;
+}
+
+.map {
+    border: 2px black solid;
+    box-shadow: 0px 0px 50px 15px orangered;
+    margin-top: 20px;
+}
+
+.map iframe {
+    display: block;
 }

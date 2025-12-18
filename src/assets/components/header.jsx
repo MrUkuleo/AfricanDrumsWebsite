@@ -1,21 +1,54 @@
-import { useState } from 'react'
-import LogoText from '../images/logo_text.png'
-import '../../App.css'
+import { useState } from 'react'; // Этот импорт можно убрать, если не используете локальное состояние
+import LogoText from '../images/logo_text.png';
+import '../../App.css';
 
-function Header() {
+function Header({ currentPage, setCurrentPage }) { // Получаем пропсы
+  const handleNavClick = (page, e) => {
+    e.preventDefault(); // Предотвращаем скролл и перезагрузку страницы
+    setCurrentPage(page);
+  };
+
   return (
     <>
       <header>
-        <img src={LogoText} id="logo"/>
+        <img src={LogoText} id="logo" />
         <ul>
-            <li><a href='#'>Главная</a></li>
-            <li><a href='#about-us'>Польза от занятий</a></li>
-            <li><a href='#schedule'>Расписание</a></li>
-            <li><a href='#contacts'>Контакты</a></li>
+          <li>
+            <a
+              className={currentPage === 'home' ? 'active' : ''} 
+              onClick={(e) => handleNavClick('home', e)}
+            >
+              Главная
+            </a>
+          </li>
+          <li>
+            <a
+              className={currentPage === 'about' ? 'active' : ''}
+              onClick={(e) => handleNavClick('about', e)}
+            >
+              Польза от занятий
+            </a>
+          </li>
+          <li>
+            <a
+              className={currentPage === 'schedule' ? 'active' : ''}
+              onClick={(e) => handleNavClick('schedule', e)}
+            >
+              Расписание
+            </a>
+          </li>
+          <li>
+            <a
+              className={currentPage === 'contacts' ? 'active' : ''}
+              onClick={(e) => handleNavClick('contacts', e)}
+            >
+              Контакты
+            </a>
+          </li>
         </ul>
       </header>
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;
