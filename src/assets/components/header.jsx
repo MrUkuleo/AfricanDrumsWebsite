@@ -9,9 +9,9 @@ function Header() {
         <img src={LogoText} id="logo"/>
         <ul>
             <li><a href='#'>Главная</a></li>
-            <li><a href='#about-us'>О нас</a></li>
-            <li><a href='#sign-up'>Записаться на урок</a></li>
-            <li><a href='#'>Расписание</a></li>
+            <li><a href='#about-us'>Польза от занятий</a></li>
+            <li><a href='#schedule'>Расписание</a></li>
+            <li><a href='#contacts'>Контакты</a></li>
         </ul>
       </header>
     </>

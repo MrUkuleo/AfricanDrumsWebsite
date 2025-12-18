@@ -8,8 +8,8 @@ function Showcase() {
       <section className="showcase">
         <img src={LogoPic}/>
         <div className="left-content">
-            <h1>ШКОЛА АФРИКАНСКИХ БАРАБАНОВ ДЛЯ ДЕТЕЙ 7-14 ЛЕТ</h1>
-            <a href='#sign-up'><button>ЗАПИСАТЬСЯ НА УРОК</button></a>
+            <h1>ШКОЛА АФРИКАНСКИХ БАРАБАНОВ ДЛЯ ДЕТЕЙ И ПОДРОСТКОВ</h1>
+            {/* <a href='#sign-up'><button>ЗАПИСАТЬСЯ НА УРОК</button></a> */}
         </div>
       </section>
     </>

@@ -2,7 +2,9 @@ import { useState } from 'react'
 import Header from './assets/components/header'
 import Showcase from './assets/components/showcase'
 import AboutUs from './assets/components/about-us'
-import SignUp from './assets/components/sign-up'
+import Schedule from './assets/components/schedule'
+// import SignUp from './assets/components/sign-up'
+import Contacts from './assets/components/contacts'
 import './App.css'
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
       <Header/>
       <Showcase/>
       <AboutUs/>
-      <SignUp/>
+      <Schedule/>
+      {/* <SignUp/> */}
+      <Contacts/>
     </>
   )
 }
