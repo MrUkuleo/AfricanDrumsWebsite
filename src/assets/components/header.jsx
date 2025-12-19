@@ -1,10 +1,10 @@
-import { useState } from 'react'; // Этот импорт можно убрать, если не используете локальное состояние
+import { useState } from 'react'; 
 import LogoText from '../images/logo_text.png';
 import '../../App.css';
 
-function Header({ currentPage, setCurrentPage }) { // Получаем пропсы
+function Header({ currentPage, setCurrentPage }) { 
   const handleNavClick = (page, e) => {
-    e.preventDefault(); // Предотвращаем скролл и перезагрузку страницы
+    e.preventDefault(); 
     setCurrentPage(page);
   };
 
@@ -35,6 +35,14 @@ function Header({ currentPage, setCurrentPage }) { // Получаем проп�
               onClick={(e) => handleNavClick('schedule', e)}
             >
               Расписание
+            </a>
+          </li>
+          <li>
+            <a
+              className={currentPage === 'payment' ? 'active' : ''}
+              onClick={(e) => handleNavClick('payment', e)}
+            >
+              Стоимость
             </a>
           </li>
           <li>
