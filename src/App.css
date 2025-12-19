@@ -4,8 +4,7 @@
 }
 
 html, body {
-    height: 100%;  /* Добавьте это */
-    overflow: hidden;  /* Скрываем скроллбар на body */
+    height: 100%;
 }
 
 body {
@@ -14,8 +13,8 @@ body {
     margin: 0;
     padding: 0;
     scroll-padding-top: 100px;
-    display: flex;  /* Добавьте: Flexbox для вертикального распределения */
-    flex-direction: column;  /* Вертикальный стек */
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -27,10 +26,9 @@ h3 {
 }
 
 .app-container {
-    height: 100vh;  /* Фиксированная высота */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 button {
@@ -49,15 +47,14 @@ button:hover {
 }
 
 .showcase, .about-us, .schedule, .contacts {
-    height: auto;  /* Уберите 100vh, пусть flex растягивает */
-    flex: 1;  /* Занимает всё оставшееся место */
-    min-height: 100vh;  /* Минимально 100vh для маленьких экранов */
-    overflow: hidden;  /* Нет скролла внутри секции */
+    height: auto;
+    flex: 1;
+    min-height: 100vh;
 }
 
 .paragraph-content, .schedule p, .contacts ul {
-    overflow-y: auto;  /* Скролл только внутри, если нужно */
-    max-height: 100%;  /* Не выходит за секцию */
+    overflow-y: auto;
+    max-height: 100%;
 }
 
 /*-----HEADER-----*/
@@ -74,12 +71,15 @@ header {
     background-color: blanchedalmond;
     box-shadow: 10px 7px 20px orangered;
     z-index: 1000;
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    padding: 10px;
 }
 
 header ul {
     display: flex;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 header li {
@@ -106,6 +106,7 @@ header li a.active {
 #logo {
     width: 15%;
     height: 15%;
+    min-width: 80px;
 }
 
 /*-----SHOWCASE-----*/
@@ -299,8 +300,351 @@ header li a.active {
     border: 2px black solid;
     box-shadow: 0px 0px 50px 15px orangered;
     margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .map iframe {
     display: block;
+    width: 100%;
+    height: 450px;
+}
+
+/*===========================================*/
+/*     АДАПТИВНАЯ ВЁРСТКА (MEDIA QUERIES)    */
+/*===========================================*/
+
+/* Планшеты (до 1024px) */
+@media screen and (max-width: 1024px) {
+    * {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 24px;
+        width: 320px;
+        height: 55px;
+    }
+
+    #logo {
+        width: 18%;
+        min-width: 70px;
+    }
+
+    header li {
+        margin-left: 15px;
+    }
+
+    .showcase {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .showcase img,
+    .left-content {
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .showcase img {
+        max-height: 400px;
+    }
+
+    .about-us img {
+        width: 280px;
+        height: 280px;
+    }
+
+    #about-us {
+        font-size: 52px;
+    }
+
+    .parapraph {
+        flex-direction: column;
+        max-width: 90%;
+        gap: 20px;
+    }
+
+    #pr {
+        text-align: left;
+    }
+
+    .schedule p {
+        max-width: 90%;
+    }
+
+    #sign-up {
+        font-size: 42px;
+    }
+
+    .map {
+        max-width: 500px;
+    }
+
+    .map iframe {
+        height: 400px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 18px;
+    }
+
+    body {
+        scroll-padding-top: 80px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 20px;
+        width: 280px;
+        height: 50px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px 5px;
+        gap: 10px;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header li {
+        margin: 5px 10px;
+    }
+
+    #logo {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .showcase {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+
+    .showcase img {
+        max-height: 300px;
+    }
+
+    .left-content {
+        max-width: 100%;
+    }
+
+    #about-us {
+        font-size: 38px;
+    }
+
+    .about-us img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .parapraph {
+        max-width: 100%;
+    }
+
+    .schedule p {
+        max-width: 100%;
+        font-size: 18px;
+    }
+
+    #sign-up {
+        font-size: 36px;
+    }
+
+    .sign-up input {
+        width: 280px;
+        font-size: 16px;
+    }
+
+    .sign-up select {
+        width: 220px;
+        font-size: 14px;
+    }
+
+    .map {
+        max-width: 100%;
+    }
+
+    .map iframe {
+        height: 350px;
+    }
+}
+
+/* Маленькие мобильные устройства (до 480px) */
+@media screen and (max-width: 480px) {
+    * {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        width: 240px;
+        height: 45px;
+    }
+
+    header {
+        padding: 8px 5px;
+    }
+
+    header li {
+        margin: 5px 8px;
+    }
+
+    header li a {
+        font-size: 14px;
+    }
+
+    #logo {
+        width: 80px;
+        min-width: 80px;
+    }
+
+    .showcase {
+        padding: 20px 10px;
+    }
+
+    .showcase img {
+        max-height: 250px;
+    }
+
+    #about-us {
+        font-size: 30px;
+    }
+
+    .about-us img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .parapraph {
+        gap: 15px;
+    }
+
+    .schedule h1 {
+        font-size: 32px;
+    }
+
+    .schedule p {
+        font-size: 16px;
+    }
+
+    #sign-up {
+        font-size: 28px;
+    }
+
+    .sign-up input {
+        width: 240px;
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .sign-up select {
+        width: 200px;
+        font-size: 12px;
+        height: 28px;
+    }
+
+    .contacts h1 {
+        font-size: 32px;
+    }
+
+    .contacts {
+        font-size: 16px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+
+/* Очень маленькие экраны (до 360px) */
+@media screen and (max-width: 360px) {
+    * {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        width: 200px;
+        height: 40px;
+    }
+
+    header li a {
+        font-size: 12px;
+    }
+
+    #logo {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .showcase img {
+        max-height: 200px;
+    }
+
+    #about-us {
+        font-size: 26px;
+    }
+
+    .about-us img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #sign-up {
+        font-size: 24px;
+    }
+
+    .sign-up input {
+        width: 200px;
+        font-size: 12px;
+    }
+
+    .sign-up select {
+        width: 180px;
+        font-size: 11px;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
 }
