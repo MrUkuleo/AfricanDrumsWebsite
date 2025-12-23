@@ -298,7 +298,7 @@ header li a.active {
     font-size: 24px;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
 
@@ -328,7 +328,8 @@ header li a.active {
     text-decoration: underline;
 }
 
-.adresToCopy, .phoneToCopy {
+.adresToCopy,
+.phoneToCopy {
     cursor: pointer;
     text-decoration: dashed underline;
 }
@@ -337,14 +338,20 @@ header li a.active {
     border: 2px black solid;
     box-shadow: 0px 0px 50px 15px orangered;
     margin-top: 20px;
-    width: 100%;
+    width: 50%;
     max-width: 600px;
 }
 
 .map iframe {
     display: block;
     width: 100%;
-    height: 450px;
+    height: min(450px, 50vh);
+}
+
+@media (max-height: 700px) {
+    .map iframe {
+        height: 300px;
+    }
 }
 
 /*===========================================*/
@@ -421,14 +428,6 @@ header li a.active {
 
     #sign-up {
         font-size: 42px;
-    }
-
-    .map {
-        max-width: 500px;
-    }
-
-    .map iframe {
-        height: 400px;
     }
 }
 
@@ -679,9 +678,5 @@ header li a.active {
     .sign-up select {
         width: 180px;
         font-size: 11px;
-    }
-
-    .map iframe {
-        height: 250px;
     }
 }
