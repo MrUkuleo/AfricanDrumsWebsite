@@ -293,13 +293,14 @@ header li a.active {
 
 /*-----CONTACTS-----*/
 .contacts {
-    justify-content: center;
+    justify-content: flex-start; /* Изменено с center */
     display: flex;
     font-size: 24px;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    padding-top: 60px; /* Добавлен отступ сверху для баланса */
 }
 
 .contacts h1 {
@@ -311,6 +312,7 @@ header li a.active {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
+    margin-bottom: 30px; /* Увеличен отступ снизу */
 }
 
 .contacts li {
@@ -338,8 +340,10 @@ header li a.active {
     border: 2px black solid;
     box-shadow: 0px 0px 50px 15px orangered;
     margin-top: 20px;
-    width: 50%;
+    width: 25%;
+    height: auto;
     max-width: 600px;
+    flex-shrink: 0; /* Предотвращает сжатие карты */
 }
 
 .map iframe {
@@ -351,6 +355,22 @@ header li a.active {
 @media (max-height: 700px) {
     .map iframe {
         height: 300px;
+    }
+    
+    .contacts {
+        padding-top: 30px; /* Меньший отступ на маленьких экранах */
+    }
+}
+
+/* Дополнительная защита для очень маленьких экранов */
+@media (max-height: 500px) {
+    .contacts {
+        min-height: auto; /* Убираем min-height */
+        padding: 20px;
+    }
+    
+    .map iframe {
+        height: 250px;
     }
 }
 

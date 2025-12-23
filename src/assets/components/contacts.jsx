@@ -25,7 +25,7 @@ function Contacts()
                 <li><div className="adresToCopy" onClick={CopyAddress}>Москва, Новая Басманная ул., 23, стр. 2, 1-й этаж</div></li>
             </ul>
             <div className="map">
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae101ce696772fec8b9290d2132f07cb8b2e5502e256df6040cf1b956f02cbf62&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae101ce696772fec8b9290d2132f07cb8b2e5502e256df6040cf1b956f02cbf62&amp;source=constructor" width="320" height="240" frameborder="0"></iframe>
             </div>
         </section>
     </>
